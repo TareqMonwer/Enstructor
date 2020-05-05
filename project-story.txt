@@ -1,0 +1,20 @@
+/**
+Basic Project Details (for MVP):
+I want users to be able to browse all courses in my site.
+They should be able to enroll their desired course. We accept two payment method for now.
+	1. Offline Payment.
+	2. BKash Payment.
+After making payment, a user will access course materials with corresponding account.
+If he/she claims for a certificate, we then provide him/her a certificate after taking a quiz on his course.
+
+
+/**
+Requirements:
+-> Course Model
+-> All course listing
+-> Course enroll system
+-> Student Account
+-> Payment system
+-> Course access management
+-> Certificate generate for    course and student.
+-> Quiz for course.
