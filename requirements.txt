@@ -1,0 +1,6 @@
+Django==2.2
+django-braces==1.14.0
+Pillow==7.1.2
+pytz==2020.1
+six==1.14.0
+sqlparse==0.3.1
