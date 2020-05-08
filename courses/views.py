@@ -8,6 +8,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.models import User
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from .models import Course, Module, Content, Subject
 from .forms import ModuleFormSet
@@ -185,6 +186,20 @@ class CourseListView(TemplateResponseMixin, View):
         return self.render_to_response({'subjects': subjects,
                                         'subject': subject,
                                         'courses': courses})
+
+
+class CourseByOwnerList(TemplateResponseMixin, View):
+    """Shows courses created by author."""
+    model = Course
+    template_name = 'courses/course/owner_list.html'
+
+    def get(self, request, owner=None):
+        if owner:
+            owner = get_object_or_404(User, username=owner)
+            courses = Course.objects.filter(owner=owner)
+            return self.render_to_response({'courses': courses,
+                                            'owner': owner})
+        return None
 
 
 class CourseDetailView(DetailView):

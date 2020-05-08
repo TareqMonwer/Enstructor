@@ -49,7 +49,10 @@
                         {{ subject }}
                     </a>
                     {{ course.total_modules }} modules.
-                    instructor: {{ course.owner.get_full_name }}
+                    instructor:
+                    <a href="{% url 'course_list_owner' course.owner.username %}">
+                        {{ course.owner.get_full_name }}
+                    </a>
                 </p>
             {% endwith %}
         {% endfor %}

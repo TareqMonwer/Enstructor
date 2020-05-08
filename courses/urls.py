@@ -37,4 +37,7 @@ urlpatterns = [
     path('<slug:slug>/',
          views.CourseDetailView.as_view(),
          name='course_detail'),
+    path('author/<owner>/',
+         views.CourseByOwnerList.as_view(),
+         name='course_list_owner'),
 ]
