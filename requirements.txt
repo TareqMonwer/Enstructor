@@ -1,4 +1,4 @@
-Django==2.2
+Django==2.2.10
 django-braces==1.14.0
 Pillow==7.1.2
 pytz==2020.1
