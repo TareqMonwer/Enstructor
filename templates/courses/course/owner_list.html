@@ -25,6 +25,8 @@
                     instructor: {{ course.owner.get_full_name }}
                 </p>
             {% endwith %}
+        {% empty %}
+            This author haven't created any course yet.
         {% endfor %}
     </div>
 {% endblock %}
