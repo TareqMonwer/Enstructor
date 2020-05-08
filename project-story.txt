@@ -18,3 +18,4 @@ Requirements:
 -> Course access management
 -> Certificate generate for    course and student.
 -> Quiz for course.
+-> Course CMS
