@@ -120,6 +120,7 @@ dmypy.json
 .pyre/
 
 # Virtual Environment
+env/
 Scripts/
 tcl/
 Lib/
