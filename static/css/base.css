@@ -32,7 +32,8 @@ h1 {
 .module {
     padding:10px 20px;
     float:left;
-    width:600px;
+    width:75%;
+    display: flex;
 }
 
 .module h3 {
@@ -73,6 +74,11 @@ h1 {
     float:right;
     margin:0;
     padding:0;
+    display: flex;
+}
+
+#header .menu li:not(:last-child) {
+    margin-right: 1rem;
 }
 
 .contents {
@@ -82,12 +88,39 @@ h1 {
     background:#333;
     color: #fff;
     font-family:'Roboto', sans-serif;
+    min-height: 100vh;
 }
 
 .contents ul {
     list-style:none;
     margin:0;
     padding:0;
+    width: 100%;
+}
+
+.course-card {
+    margin-right: 1rem;
+    box-shadow: 2px 2px 10px #efefef;
+}
+.course-card .cc-content {
+    padding: 1rem;
+}
+.cc-cover img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cc-cover {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+.course-card--title {
+    font-size: 1.2rem;
+}
+.cc-detail {
+    margin: .6rem 0;
 }
 
 .contents ul li {
@@ -251,4 +284,16 @@ ul#course-modules li:hover {
 .helptext {
     color:#ccc;
     padding-left:20px;
+}
+
+.cd-container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.col-jumbotron {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 2rem;
 }

@@ -4,7 +4,12 @@
 
 
 {% block content %}
-    <h1>My Courses</h1>
+    <h1 class="col-jumbotron">
+        My Courses
+        <a href="{% url 'course_create' %}" class="button">
+            Create New Course 
+        </a>
+    </h1>
 
     <div class="module">
         {% for course in object_list %}
@@ -24,10 +29,5 @@
         {% empty %}
             <p>You haven't create any courses yet.</p>
         {% endfor %}
-    <p>
-        <a href="{% url 'course_create' %}" class="button">
-            Create New Course 
-        </a>
-    </p>
     </div>
 {% endblock content %}

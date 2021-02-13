@@ -9,31 +9,33 @@
 {% block content %}
     {% with course.subject as subject %}
         <h1>{{ object.title }}</h1>
-        <div class="module">
-            <h2>Overview</h2>
-            <p>
-                Subject:
-                <a href="{% url 'course_list_subject' subject.slug %}">
-                    {{ subject.title }}
-                </a>,
-                {{ course.modules.count }} modules.
-                Instructor:
-                <a href="{% url 'course_list_owner' course.owner.username %}">
-                    {{ course.owner.get_full_name }}
-                </a>
-            </p>
-            {{ object.overview|linebreaks }}
-            {% if request.user.is_authenticated %}
-                <form action="{% url 'student_enroll_course' %}" method="post">
-                    {{ enroll_form }}
-                    {% csrf_token %}
-                    <input type="submit" value="Enroll Now" class="button">
-                </form>
-            {% else %}
-                <a href="{% url 'student_registration' %}" class="button">
-                    Register to enroll
-                </a>
-            {% endif %}
+        <div class="course-detail">
+            <div class="cd-container">
+                <h2>Overview</h2>
+                <p>
+                    Subject:
+                    <a href="{% url 'course_list_subject' subject.slug %}">
+                        {{ subject.title }}
+                    </a>,
+                    {{ course.modules.count }} modules.
+                    Instructor:
+                    <a href="{% url 'course_list_owner' course.owner.username %}">
+                        {{ course.owner.get_full_name|default:course.owner.username|title }}
+                    </a>
+                </p>
+                {{ object.overview|linebreaks }}
+                {% if request.user.is_authenticated %}
+                    <form action="{% url 'student_enroll_course' %}" method="post">
+                        {{ enroll_form }}
+                        {% csrf_token %}
+                        <input type="submit" value="Enroll Now" class="button">
+                    </form>
+                {% else %}
+                    <a href="{% url 'student_registration' %}" class="button">
+                        Register to enroll
+                    </a>
+                {% endif %}
+            </div>
         </div>
     {% endwith %}
 {% endblock %}
