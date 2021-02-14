@@ -1,43 +1,81 @@
 {% load staticfiles %}
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %} Enstructor {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
-<body>
-<div id="header">
-    <a href="/" class="logo">Enstructor</a>
-    <ul class="menu">
-        {% if request.user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Sign out</a></li>
-            <li>
-                <a href="{% url 'manage_course_list' %}">
-                    My Account
-                </a>
-            </li>
-        {% else %}
-            <li><a href="{% url 'login' %}">Sign in</a></li>
-        {% endif %}
-    </ul>
-</div>
-<div id="content">
-    {% block content %}
-    {% endblock %}
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script>
-    $(document).ready(function () {
-        {% block domready %}
-        {% endblock domready %}
-    })
-</script>
+<body>
+    <div id="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="/">Enstructor</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Browse Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Category 1</a>
+                                <a class="dropdown-item" href="#">Category 12</a>
+                                <a class="dropdown-item" href="#">Category 11</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Account
+                            </a>
+                            <div class="dropdown-menu" id="account-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'manage_course_list' %}">My Account</a>
+                                <a class="dropdown-item" href="#">My Learning</a>
+                                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                            </div>
+                        </li>
+                        {% else %}
+                        <a href="{% url 'student_registration' %}" class="nav-item btn btn-success mr-2">Join</a>
+                        <a href="{% url 'login' %}" class="nav-item btn">Login</a>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            {% block domready %}
+            {% endblock domready %}
+        })
+    </script>
 
 </body>
+
 </html>

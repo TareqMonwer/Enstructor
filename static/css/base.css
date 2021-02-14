@@ -29,6 +29,10 @@ h1 {
     margin:0;
 }
 
+#account-dropdown {
+    margin-left: -85px;
+}
+
 .module {
     padding:10px 20px;
     float:left;

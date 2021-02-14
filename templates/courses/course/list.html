@@ -39,34 +39,38 @@
     </div>
 
     <div class="module">
-        {% for course in courses %}
+        <div class="row w-100">
+            {% for course in courses %}
             {% with subject=course.subject %}
-            <div class="course-card">
-                <div class="cc-cover">
-                    <img src="https://picsum.photos/200/300" alt="">
-                </div>
-                <div class="cc-content">
-                    <div class="course-card--title">
-                        <a href="{% url 'course_detail' course.slug %}">
-                            {{ course.title }}
-                        </a>
+            <div class="col-sm-12 col-md-3">
+                <div class="course-card mb-4">
+                    <div class="cc-cover">
+                        <img src="https://picsum.photos/200/300" alt="">
                     </div>
-                    <div class="cc-detail">
-                        <a href="{% url 'course_list_subject' subject.slug %}">
-                            <i>{{ subject }}</i>
-                        </a>
-                        {{ course.total_modules }} modules.
-                    </div>
-                    <div class="cc-metadata">
-                        instructor:
-                        <a href="{% url 'course_list_owner' course.owner.username %}">
-                            {{ course.owner.get_full_name|default:course.owner.username|title }}
-                        </a>
+                    <div class="cc-content">
+                        <div class="course-card--title">
+                            <a href="{% url 'course_detail' course.slug %}">
+                                {{ course.title }}
+                            </a>
+                        </div>
+                        <div class="cc-detail">
+                            <a href="{% url 'course_list_subject' subject.slug %}">
+                                <i>{{ subject }}</i>
+                            </a>
+                            {{ course.total_modules }} modules.
+                        </div>
+                        <div class="cc-metadata">
+                            instructor:
+                            <a href="{% url 'course_list_owner' course.owner.username %}">
+                                {{ course.owner.get_full_name|default:course.owner.username|title }}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             {% endwith %}
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 
 {% endblock %}

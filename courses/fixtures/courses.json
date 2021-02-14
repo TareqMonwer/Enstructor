@@ -1,0 +1,120 @@
+[
+    {
+        "model": "courses.course",
+        "pk": 5,
+        "fields": {
+            "owner": 1,
+            "subject": 3, 
+            "title": "Academy One",
+            "slug": "course-1",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 6,
+        "fields": {
+            "owner": 1,
+            "subject": 3,
+            "title": "Academy Two",
+            "slug": "course-2",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 7,
+        "fields": {
+            "owner": 1,
+            "subject": 3,
+            "title": "Academy Three",
+            "slug": "course-3",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 8,
+        "fields": {
+            "owner": 1,
+            "subject": 9,
+            "title": "Django By Examples",
+            "slug": "dj-course-1",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 9,
+        "fields": {
+            "owner": 1,
+            "subject": 9,
+            "title": "Become a Django Ninja",
+            "slug": "dj-course-2",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 10,
+        "fields": {
+            "owner": 1,
+            "subject": 9,
+            "title": "Fullstack Python | Django | Scrappy",
+            "slug": "dj-course-3",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 11,
+        "fields": {
+            "owner": 1,
+            "subject": 9,
+            "title": "React | Django | DevOps",
+            "slug": "dj-course-4",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 12,
+        "fields": {
+            "owner": 1,
+            "subject": 9,
+            "title": "Advanced Django Concepts and Docker",
+            "slug": "dj-course-5",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 10,
+        "fields": {
+            "owner": 1,
+            "subject": 4,
+            "title": "Learn Design from Designer",
+            "slug": "design-1",
+            "overview": "NA",
+            "created": "2021-02-13T11:41:09.812Z",
+            "students": []
+        }
+    }
+
+]
