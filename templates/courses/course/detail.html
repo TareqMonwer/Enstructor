@@ -9,7 +9,7 @@
 {% block content %}
     {% with course.subject as subject %}
         <h1>{{ object.title }}</h1>
-        <div class="course-detail">
+        <div class="course-detail mt-4">
             <div class="cd-container">
                 <h2>Overview</h2>
                 <p>
@@ -25,11 +25,18 @@
                 </p>
                 {{ object.overview|linebreaks }}
                 {% if request.user.is_authenticated %}
-                    <form action="{% url 'student_enroll_course' %}" method="post">
-                        {{ enroll_form }}
-                        {% csrf_token %}
-                        <input type="submit" value="Enroll Now" class="button">
-                    </form>
+                    
+                    {% if course not in user.courses_joined.all %}
+                        <form action="{% url 'student_enroll_course' %}" method="post">
+                            {{ enroll_form }}
+                            {% csrf_token %}
+                            <input type="submit" value="Enroll Now" class="button">
+                        </form>
+                    {% else %}
+                        <a href="{% url 'student_course_detail' pk=course.pk %}" class="button">Access Course</a>
+                    {% endif %}
+                    
+                    
                 {% else %}
                     <a href="{% url 'student_registration' %}" class="button">
                         Register to enroll

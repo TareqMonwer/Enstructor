@@ -48,7 +48,13 @@
                     <div class="col-sm-12 col-md-3">
                         <div class="course-card mb-4">
                             <div class="cc-cover">
-                                <img src="https://picsum.photos/200/300" alt="">
+                                <img 
+                                {% if course.banner %}
+                                    src="{{ course.banner.url }}" 
+                                {% else %}
+                                    src="https://picsum.photos/200/300"
+                                {% endif %} 
+                                alt="{{ course.title }}">
                             </div>
                             <div class="cc-content">
                                 <div class="course-card--title">

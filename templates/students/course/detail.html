@@ -6,7 +6,20 @@
 
 
 {% block content %}
-    <h1>{{ module.title }}</h1>
+    {% with title=object.title %}
+        <h1 class="d-flex justify-content-between">
+            <span>
+                {{ module.title|default:title }}
+            </span>
+            
+            {% if module.title %}
+                <span class="text-muted mr-5 small">
+                    {{ title }}
+                </span>
+            {% endif %}
+                
+        </h1>
+    {% endwith %}
     <div class="contents">
         <h3>Modules</h3>
         <ul id="modules">

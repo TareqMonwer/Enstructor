@@ -254,7 +254,7 @@ ul#course-modules li:hover {
     cursor:move;
 }
 
-#module-contents div {
+#module-contents > div {
     padding:10px 20px;
     border:1px solid #ccc;
     background:#fff
