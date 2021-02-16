@@ -11,23 +11,52 @@
         </a>
     </h1>
 
-    <div class="module">
-        {% for course in object_list %}
-            <div class="course-info">
-            <h3>{{ course.title }}</h3>
-            <p>
-                <a href="{% url 'course_edit' course.id %}">Edit</a>
-                <a href="{% url 'course_delete' course.id %}">Delete</a>
-                <a href="{% url 'course_module_update' course.id %}">Edit Course Modules</a>
-                {% if course.modules.count > 0 %}
-                    <a href="{% url 'module_content_list' course.modules.first.id %}">
-                        Manage Contents
-                    </a>
-                {% endif %}
-            </p>
-            </div>
-        {% empty %}
+    <div class="container">
+        <div class="row mt-5">
+            {% for course in object_list %}
+                <div class="col-sm-12 col-md-4 col-lg-3 mb-4">
+                    <div class="card course-manage-card">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <span class="options-btn">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </span>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ course.title }}</h5>
+                            <div class="buttons-group">
+                                <div class="d-flex flex-column">
+                                    <a class="btn btn-sm btn-dark" href="{% url 'course_edit' course.id %}">Edit</a>
+                                    <a class="btn btn-sm btn-danger" href="{% url 'course_delete' course.id %}">Delete</a>
+                                    <a class="btn btn-sm btn-dark" href="{% url 'course_module_update' course.id %}">Edit Course Modules</a>
+                                    {% if course.modules.count > 0 %}
+                                    <a class="btn btn-sm btn-success" href="{% url 'module_content_list' course.modules.first.id %}">
+                                        Manage Contents
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
             <p>You haven't create any courses yet.</p>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock content %}
+
+{% block extra_js %}
+    <script>
+        const showManageOptions = (e) => {
+            const card = e.currentTarget.parentNode;
+            console.log(card.querySelector('.buttons-group'))
+            card.querySelector('.buttons-group').classList.toggle('show')
+        }
+        $(document).ready(function () {
+            let optionBtns = $('.options-btn');
+            optionBtns = optionBtns.toArray()
+            optionBtns.forEach(button => {
+                button.addEventListener('click', showManageOptions)
+            })
+        })
+    </script>
+{% endblock %}

@@ -20,56 +20,61 @@
             All Courses
         {% endif %}
     </h1>
-    <div class="contents">
-        <h3>Subjects</h3>
-        <ul class="modules">
-            <li {% if not subject %} class="selected" {% endif %}>
-                <a href="{% url 'course_list' %}">All</a>
-            </li>
-            {% for s in subjects %}
-                <li {% if subject == s %} class="selected"{% endif %}>
-                    <a href="{% url 'course_list_subject' s.slug %}">
-                        {{ s.title }}
-                        <br>
-                        <span>{{ s.total_courses }} Courses</span>
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-    <div class="module">
-        <div class="row w-100">
-            {% for course in courses %}
-            {% with subject=course.subject %}
-            <div class="col-sm-12 col-md-3">
-                <div class="course-card mb-4">
-                    <div class="cc-cover">
-                        <img src="https://picsum.photos/200/300" alt="">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="contents col-md-3 col-lg-2">
+                <h3>Subjects</h3>
+                <ul class="modules">
+                    <li {% if not subject %} class="selected" {% endif %}>
+                        <a href="{% url 'course_list' %}">All</a>
+                    </li>
+                    {% for s in subjects %}
+                    <li {% if subject == s %} class="selected" {% endif %}>
+                        <a href="{% url 'course_list_subject' s.slug %}">
+                            {{ s.title }}
+                            <br>
+                            <span>{{ s.total_courses }} Courses</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="module col-md-9 col-lg-10">
+                <div class="row w-100">
+                    {% for course in courses %}
+                    {% with subject=course.subject %}
+                    <div class="col-sm-12 col-md-3">
+                        <div class="course-card mb-4">
+                            <div class="cc-cover">
+                                <img src="https://picsum.photos/200/300" alt="">
+                            </div>
+                            <div class="cc-content">
+                                <div class="course-card--title">
+                                    <a href="{% url 'course_detail' course.slug %}">
+                                        {{ course.title }}
+                                    </a>
+                                </div>
+                                <div class="cc-detail">
+                                    <a href="{% url 'course_list_subject' subject.slug %}">
+                                        <i>{{ subject }}</i>
+                                    </a>
+                                    {{ course.total_modules }} modules.
+                                </div>
+                                <div class="cc-metadata">
+                                    instructor:
+                                    <a href="{% url 'course_list_owner' course.owner.username %}">
+                                        {{ course.owner.get_full_name|default:course.owner.username|title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="cc-content">
-                        <div class="course-card--title">
-                            <a href="{% url 'course_detail' course.slug %}">
-                                {{ course.title }}
-                            </a>
-                        </div>
-                        <div class="cc-detail">
-                            <a href="{% url 'course_list_subject' subject.slug %}">
-                                <i>{{ subject }}</i>
-                            </a>
-                            {{ course.total_modules }} modules.
-                        </div>
-                        <div class="cc-metadata">
-                            instructor:
-                            <a href="{% url 'course_list_owner' course.owner.username %}">
-                                {{ course.owner.get_full_name|default:course.owner.username|title }}
-                            </a>
-                        </div>
-                    </div>
+                    {% endwith %}
+                    {% endfor %}
                 </div>
             </div>
-            {% endwith %}
-            {% endfor %}
         </div>
     </div>
 
