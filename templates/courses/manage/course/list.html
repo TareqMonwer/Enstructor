@@ -48,15 +48,32 @@
     <script>
         const showManageOptions = (e) => {
             const card = e.currentTarget.parentNode;
-            console.log(card.querySelector('.buttons-group'))
-            card.querySelector('.buttons-group').classList.toggle('show')
+            card.querySelector('.buttons-group').classList.toggle('show');
         }
+
+        const showManageOptionsFromCard = (e) => {
+            // stop event bubbling.
+            event.stopPropagation();
+            const card = e.target;
+            card.querySelector('.buttons-group').classList.toggle('show');
+        }
+
+        
         $(document).ready(function () {
+            // click events for dot-icons
             let optionBtns = $('.options-btn');
-            optionBtns = optionBtns.toArray()
+            optionBtns = optionBtns.toArray();
             optionBtns.forEach(button => {
-                button.addEventListener('click', showManageOptions)
+                button.addEventListener('click', showManageOptions);
+            })
+
+            // click events for manage cards
+            let cards = $('.course-manage-card');
+            cards = cards.toArray();
+            cards.forEach(card => {
+                card.addEventListener('click', showManageOptionsFromCard);
             })
         })
+        
     </script>
 {% endblock %}
