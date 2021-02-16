@@ -1,11 +1,15 @@
+import os
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from django.core.files import File
+from django.core.files.base import ContentFile
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 
 from .fields import OrderField
+from .utils import generate_custom_course_banner
 
 
 class Subject(models.Model):
@@ -26,6 +30,8 @@ class Course(models.Model):
                                 on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
+    banner = models.ImageField(upload_to='courses/banners/',
+        blank=True, null=True)
     overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     students = models.ManyToManyField(User,
@@ -37,6 +43,24 @@ class Course(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def save(self, *args, **kwargs):
+        # save the object first
+        super().save(*args, **kwargs)
+        
+        if not self.banner:
+            banner_location = generate_custom_course_banner(self.title)
+
+            with open(banner_location, mode='rb') as f:
+                img = f.read()
+            
+            img_name = os.path.basename(banner_location.split('/')[-1])
+            self.banner.save(
+                img_name,
+                ContentFile(img)
+            )
+            print(self.banner)
+            self.save()
 
 
 class Module(models.Model):

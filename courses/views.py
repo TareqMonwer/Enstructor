@@ -29,12 +29,12 @@ class OwnerEditMixin:
 
 class OwnerCourseMixin(OwnerMixin, LoginRequiredMixin):
     model = Course
-    fields = ['subject', 'title', 'slug', 'overview']
+    fields = ['subject', 'title', 'slug', 'banner', 'overview']
     success_url = reverse_lazy('manage_course_list')
 
 
 class OwnerCourseEditMixin(OwnerCourseMixin, OwnerEditMixin):
-    fields = ['subject', 'title', 'slug', 'overview']
+    fields = ['subject', 'title', 'slug', 'banner', 'overview']
     success_url = reverse_lazy('manage_course_list')
     template_name = 'courses/manage/course/form.html'
 

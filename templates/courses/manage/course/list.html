@@ -16,7 +16,13 @@
             {% for course in object_list %}
                 <div class="col-sm-12 col-md-4 col-lg-3 mb-4">
                     <div class="card course-manage-card">
-                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <img class="card-img-top" 
+                        {% if course.banner %}
+                            src="{{ course.banner.url }}" 
+                        {% else %}
+                            src="https://picsum.photos/200/300"
+                        {% endif %}
+                        alt="Card image cap">
                         <span class="options-btn">
                             <i class="fas fa-ellipsis-v"></i>
                         </span>
