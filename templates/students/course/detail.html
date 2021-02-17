@@ -20,30 +20,40 @@
                 
         </h1>
     {% endwith %}
-    <div class="contents">
-        <h3>Modules</h3>
-        <ul id="modules">
-            {% for m in object.modules.all %}
-                <li data-id="{{ m.id }}" {% if m == module %}class="selected" {% endif %}>
-                    <a href="{% url 'student_course_detail_module' object.id m.id %}">
-                        <span>
-                            Module <span class="order">{{ m.order|add:1 }}</span>
-                        </span>
-                        <br>
-                        {{ m.title }}
-                    </a>
-                </li>
-            {% empty %}
-                <li>No modules yet.</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="module">
-        {% for content in module.contents.all %}
-            {% with content.item as item %}
-                <h2>{{ item.title }}</h2>
-                {{ item.render }}
-            {% endwith %}
-        {% endfor %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="contents col-md-3 col-lg-2">
+                <h3>Modules</h3>
+                <ul id="modules">
+                    {% for m in course.modules.all %}
+                    <li data-id="{{ m.id }}" {% if m == module %} class="selected" {% endif %}>
+                        <a href="{% url 'module_content_list' m.id %}">
+                            <span>
+                                Module <span class="order">{{ m.order|add:1 }}</span>
+                            </span>
+                            <br>
+                            {{ m.title }}
+                        </a>
+                    </li>
+                    {% empty %}
+                    <li>No Modules Yet.</li>
+                    {% endfor %}
+                    <p><a href="{% url 'course_module_update' course.id %}">Edit Modules</a></p>
+                </ul>
+            </div>
+
+            <div class="module col-md-9 col-lg-10">
+                <div class="row w-100 mt-5">
+                    {% for content in module.contents.all %}
+                        <div class="col-12">
+                            {% with content.item as item %}
+                                <h2>{{ item.title }}</h2>
+                                {{ item.render }}
+                            {% endwith %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock content %}

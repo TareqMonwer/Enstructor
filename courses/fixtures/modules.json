@@ -1,0 +1,212 @@
+[
+    {
+        "model": "courses.module",
+        "pk": 1,
+        "fields": {
+            "course": 1,
+            "title": "Intro",
+            "description": "Introduction about the course",
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 2,
+        "fields": {
+            "course": 1,
+            "title": "Overview",
+            "description": "Overview of the course",
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 3,
+        "fields": {
+            "course": 1,
+            "title": "Getting Your Hand Dirty",
+            "description": "Covering all the basic idea and start implementation",
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 4,
+        "fields": {
+            "course": 1,
+            "title": "How Other People Does This",
+            "description": "Knowing how other people does the same thing will help you in the long run.",
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 5,
+        "fields": {
+            "course": 1,
+            "title": "To Do's and Not To Do's",
+            "description": "Guidelines and recommendations.",
+            "order": 4
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 6,
+        "fields": {
+            "course": 1,
+            "title": "What's Next",
+            "description": "Last section of the course.",
+            "order": 5
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 7,
+        "fields": {
+            "course": 1,
+            "title": "Appendix",
+            "description": "Find the appendix here.",
+            "order": 6
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 8,
+        "fields": {
+            "course": 2,
+            "title": "Intro",
+            "description": "Introduction about the course",
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 9,
+        "fields": {
+            "course": 2,
+            "title": "Overview",
+            "description": "Overview of the course",
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 10,
+        "fields": {
+            "course": 2,
+            "title": "Getting Your Hand Dirty",
+            "description": "Covering all the basic idea and start implementation",
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 11,
+        "fields": {
+            "course": 2,
+            "title": "How Other People Does This",
+            "description": "Knowing how other people does the same thing will help you in the long run.",
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 12,
+        "fields": {
+            "course": 2,
+            "title": "To Do's and Not To Do's",
+            "description": "Guidelines and recommendations.",
+            "order": 4
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 13,
+        "fields": {
+            "course": 2,
+            "title": "What's Next",
+            "description": "Last section of the course.",
+            "order": 5
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 14,
+        "fields": {
+            "course": 2,
+            "title": "Appendix",
+            "description": "Find the appendix here.",
+            "order": 6
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 15,
+        "fields": {
+            "course": 3,
+            "title": "Intro",
+            "description": "Introduction about the course",
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 16,
+        "fields": {
+            "course": 3,
+            "title": "Overview",
+            "description": "Overview of the course",
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 17,
+        "fields": {
+            "course": 3,
+            "title": "Getting Your Hand Dirty",
+            "description": "Covering all the basic idea and start implementation",
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 18,
+        "fields": {
+            "course": 3,
+            "title": "How Other People Does This",
+            "description": "Knowing how other people does the same thing will help you in the long run.",
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 19,
+        "fields": {
+            "course": 3,
+            "title": "To Do's and Not To Do's",
+            "description": "Guidelines and recommendations.",
+            "order": 4
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 20,
+        "fields": {
+            "course": 3,
+            "title": "What's Next",
+            "description": "Last section of the course.",
+            "order": 5
+        }
+    },
+    {
+        "model": "courses.module",
+        "pk": 21,
+        "fields": {
+            "course": 3,
+            "title": "Appendix",
+            "description": "Find the appendix here.",
+            "order": 6
+        }
+    }
+]

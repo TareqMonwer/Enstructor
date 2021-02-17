@@ -49,7 +49,9 @@
                             </a>
                             <div class="dropdown-menu" id="account-dropdown" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{% url 'manage_course_list' %}">My Account</a>
-                                <a class="dropdown-item" href="#">My Learning</a>
+                                <a class="dropdown-item" href="{% url 'student_course_list' %}">
+                                    My Learning
+                                </a>
                                 <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                             </div>
                         </li>

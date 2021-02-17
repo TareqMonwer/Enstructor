@@ -1,0 +1,242 @@
+[
+    {
+        "model": "courses.content",
+        "pk": 1,
+        "fields": {
+            "module": 1,
+            "content_type": 5,
+            "object_id": 1,
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 2,
+        "fields": {
+            "module": 1,
+            "content_type": 5,
+            "object_id": 2,
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 3,
+        "fields": {
+            "module": 1,
+            "content_type": 5,
+            "object_id": 3,
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 4,
+        "fields": {
+            "module": 1,
+            "content_type": 5,
+            "object_id": 4,
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 5,
+        "fields": {
+            "module": 2,
+            "content_type": 5,
+            "object_id": 1,
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 6,
+        "fields": {
+            "module": 2,
+            "content_type": 5,
+            "object_id": 2,
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 7,
+        "fields": {
+            "module": 2,
+            "content_type": 5,
+            "object_id": 3,
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 8,
+        "fields": {
+            "module": 2,
+            "content_type": 5,
+            "object_id": 4,
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 9,
+        "fields": {
+            "module": 3,
+            "content_type": 5,
+            "object_id": 1,
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 10,
+        "fields": {
+            "module": 3,
+            "content_type": 5,
+            "object_id": 2,
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 11,
+        "fields": {
+            "module": 3,
+            "content_type": 5,
+            "object_id": 3,
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 12,
+        "fields": {
+            "module": 3,
+            "content_type": 5,
+            "object_id": 4,
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 13,
+        "fields": {
+            "module": 4,
+            "content_type": 5,
+            "object_id": 1,
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 14,
+        "fields": {
+            "module": 4,
+            "content_type": 5,
+            "object_id": 2,
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 15,
+        "fields": {
+            "module": 4,
+            "content_type": 5,
+            "object_id": 3,
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 16,
+        "fields": {
+            "module": 4,
+            "content_type": 5,
+            "object_id": 4,
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 17,
+        "fields": {
+            "module": 5,
+            "content_type": 5,
+            "object_id": 1,
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 18,
+        "fields": {
+            "module": 5,
+            "content_type": 5,
+            "object_id": 2,
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 19,
+        "fields": {
+            "module": 5,
+            "content_type": 5,
+            "object_id": 3,
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 20,
+        "fields": {
+            "module": 5,
+            "content_type": 5,
+            "object_id": 4,
+            "order": 3
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 21,
+        "fields": {
+            "module": 6,
+            "content_type": 5,
+            "object_id": 1,
+            "order": 0
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 22,
+        "fields": {
+            "module": 6,
+            "content_type": 5,
+            "object_id": 2,
+            "order": 1
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 23,
+        "fields": {
+            "module": 6,
+            "content_type": 5,
+            "object_id": 3,
+            "order": 2
+        }
+    },
+    {
+        "model": "courses.content",
+        "pk": 24,
+        "fields": {
+            "module": 6,
+            "content_type": 5,
+            "object_id": 4,
+            "order": 3
+        }
+    }
+]

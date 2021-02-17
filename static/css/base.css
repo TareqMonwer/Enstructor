@@ -51,12 +51,6 @@ h1 {
     width:100%;
 }
 
-.module p {
-    margin:10px 0 20px;
-    width:100%;
-    float:left;
-}
-
 #header {
     background:#4dcc43;
     overflow:auto;
