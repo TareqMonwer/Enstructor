@@ -34,6 +34,8 @@ h1 {
     display:block !important;
 }
 
+
+
 #account-dropdown {
     margin-left: -85px;
 }
@@ -325,4 +327,14 @@ ul#course-modules li:hover {
     top: 10px;
     right: 10px;
     cursor: pointer;
+}
+
+
+/* Student Course Modules View */
+img.module-image-content{
+    width:auto;
+    margin:0 auto;
+    display:block;
+    float:none;
+    max-width:100%;   
 }
