@@ -46,6 +46,8 @@ def generate_custom_course_banner(course_name):
     
     # Process saving the image
     save_path = os.path.join(MEDIA_ROOT, 'courses/banners/')
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
     img_name = slugify(course_name) + '.png'
     img.save(
         save_path + img_name, "PNG"
