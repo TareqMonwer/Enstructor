@@ -5,6 +5,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.core.files import File
 from django.core.files.base import ContentFile
+from django.db.models import Count, Q
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
 
@@ -21,6 +22,12 @@ class Subject(models.Model):
     
     def __str__(self):
         return self.title
+    
+    @staticmethod
+    def ordered_active_subjects():
+        return Subject.objects.annotate(
+            count=Count('courses')
+        ).filter(count__gt=0).order_by("-count")
 
 
 class Course(models.Model):
