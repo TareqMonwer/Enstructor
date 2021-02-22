@@ -29,7 +29,7 @@
                     <li {% if not subject %} class="selected" {% endif %}>
                         <a href="{% url 'course_list' %}">All</a>
                     </li>
-                    {% for s in subjects %}
+                    {% for s in ordered_subjects %}
                     <li {% if subject == s %} class="selected" {% endif %}>
                         <a href="{% url 'course_list_subject' s.slug %}">
                             {{ s.title }}

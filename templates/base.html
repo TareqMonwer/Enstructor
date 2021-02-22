@@ -34,9 +34,13 @@
                                 Browse Categories
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Category 1</a>
-                                <a class="dropdown-item" href="#">Category 12</a>
-                                <a class="dropdown-item" href="#">Category 11</a>
+                                
+                                {% for subject in all_categories %}
+                                    <a class="dropdown-item" href="#">
+                                        {{subject}}
+                                    </a>
+                                {% endfor %}
+                                
                             </div>
                         </li>
                     </ul>
