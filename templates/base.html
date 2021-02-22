@@ -36,7 +36,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 
                                 {% for subject in all_categories %}
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{% url 'course_list_subject' subject.slug %}">
                                         {{subject}}
                                     </a>
                                 {% endfor %}
