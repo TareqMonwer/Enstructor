@@ -6,9 +6,17 @@
 {% block content %}
     <h1 class="col-jumbotron">
         My Courses
-        <a href="{% url 'course_create' %}" class="button">
-            Create New Course 
-        </a>
+        
+        {% if perms.courses.add_course %}
+            <a href="{% url 'course_create' %}" class="button">
+                Create New Course
+            </a>
+        {% else %}
+            <a href="" class="button">
+                Become an Instructor
+            </a>
+        {% endif %}
+        
     </h1>
 
     <div class="container">
