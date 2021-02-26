@@ -338,3 +338,17 @@ img.module-image-content{
     float:none;
     max-width:100%;   
 }
+
+/* SEARCH RESULT PAGE */
+.filtergroup {
+    border-top: 1px solid rgba(185, 185, 185, 0.63);
+}
+.filtergroup-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: .7rem 0;
+}
+
+.fitergroup--body {
+    padding: 0 1rem;
+}

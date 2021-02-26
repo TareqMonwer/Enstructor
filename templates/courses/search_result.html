@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ search_query }} {% endblock %}
+
+
+{% block content %}
+    <div id="search-result">
+        <div class="container-fluid">
+            <div class="row py-3" id="search-result--metadata">
+                <div class="col-12">
+                    <h3>Showing {{ result_number }} results for {{ search_query }}</h3>
+                    <p>
+                        Students also learn 
+                        <a href="">ML</a>,
+                        <a href="">Data Science</a>,
+                        <a href="">Web Development</a>,
+                        <a href="">Android Development</a>
+                    </p>
+                </div>
+                <div class="col-12">
+                    <div>
+                        <button id="search-result--filter-btn" class="btn btn-outline-primary" data-status="true">
+                            Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- result & filter options -->
+            <div class="row">
+                <div class="col-3">
+                    <!-- filter options -->
+                    <div id="filter-area">
+                        <div class="filtergroup">
+                            <div class="filtergroup-title">
+                                Category
+                            </div>
+                            <div class="fitergroup--body">
+                                {% for category in all_categories %}
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <label for="{{ category }}" class="w-100">{{ category }}</label>
+                                        <input type="checkbox" name="category">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="course-cards">
+                        
+                        {% for course in results %}
+                            <div class="course-card border-top d-flex mb-3 justify-content-between">
+                                <div class="course-basic-data d-flex">
+                                    <div class="course-banner">
+                                        <div class="course-banner-container">
+                                            <img src="{{ course.banner.url }}" alt="{{ course.title }}">
+                                        </div>
+                                    </div>
+                                    <div class="course-content px-3 pt-3">
+                                        <h4>{{ course.title }}</h4>
+                                        <p>
+                                            {{ course.overview }}
+                                        </p>
+                                        <small class="text-muted">{{ course.owner|title }}</small>
+                                    </div>
+                                </div>
+                                <div class="course-pricing p-2">
+                                    <div class="current">
+                                        <h4>$11</h4>
+                                    </div>
+                                    <div class="old">
+                                        <del>$100</del>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

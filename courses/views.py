@@ -1,12 +1,14 @@
 from django.forms.models import modelform_factory
 from django.apps import apps
 from django.db.models import Count
+from django.shortcuts import render
+from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic.base import TemplateResponseMixin, View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
@@ -221,3 +223,26 @@ class CourseDetailView(DetailView):
             initial={'course': self.object}
         )
         return context
+
+
+def search_courses(request):
+    if request.method == 'GET':
+        query = request.GET.get('q')
+        owners_qs = list(Course.objects.filter(
+            owner__username__icontains=query
+        ))
+        subject_qs = list(Course.objects.filter(
+            subject__title__icontains=query
+        ))
+        title_qs = list(Course.objects.filter(
+            title__icontains=query
+        ))
+        results = title_qs + subject_qs + owners_qs
+        ctx = {
+            'result_number': len(results),
+            'results': results,
+            'search_query': query,
+        }
+        return render(request, 'courses/search_result.html', ctx)
+    else:
+        return HttpResponse('Method not allowed.')

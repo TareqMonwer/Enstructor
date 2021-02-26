@@ -43,6 +43,19 @@
                                 
                             </div>
                         </li>
+                        <div class="nav-item nav-searchbar">
+                            <form class="form-inline" method="get" action="{% url 'search_courses' %}">
+                                <input 
+                                    class="form-control mr-sm-2" 
+                                    type="search" placeholder="Search" 
+                                    name='q'
+                                    aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" 
+                                    type="submit">
+                                    Search
+                                </button>
+                            </form>
+                        </div>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         {% if request.user.is_authenticated %}
