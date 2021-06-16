@@ -16,7 +16,7 @@ django-heroku==0.3.1
 django==2.2.24
 gunicorn==20.0.4
 idna==2.10
-pillow==8.1.1
+pillow==8.2.0
 psycopg2==2.8.6
 pytz==2020.1
 requests==2.25.1
