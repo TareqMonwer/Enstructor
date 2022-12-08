@@ -6,7 +6,7 @@
 #
 
 -i https://pypi.org/simple/
-certifi==2020.12.5
+certifi==2022.12.7
 chardet==4.0.0
 dj-database-url==0.5.0
 django-braces==1.14.0
@@ -20,6 +20,7 @@ pillow==8.2.0
 psycopg2==2.8.6
 pytz==2020.1
 requests==2.25.1
+setuptools==65.6.3; python_version >= '3.7'
 six==1.14.0
 sqlparse==0.3.1
 urllib3==1.26.5
